@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post Trucks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/rwd-table.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="page-list">
+                <div class="list-heading">
+                    <p class="list-heading__text">Post Trucks</p>
+                </div>
+                <div class="list-panel">
+                    <div class="list-panel__buttons">
+                        <button class="btn" id="btn-start-simulation"><img src="css/icons/play.png" class="btn-icon"> Play</button>
+                        <button class="btn"><a href="#openModal"><img src="css/icons/add.png" class="btn-icon">New</a></button>
+                        <button class="btn" id ="btn-modal-table-clear"><img src="css/icons/delete.png" class="btn-icon">Delete All</button>
+                        <button class="btn"><img src="css/icons/repost.png" class="btn-icon"> Repost All</button>
+                    </div>
+                    <div class="list-panel__control table-responsive" data-pattern="priority-columns">
+                        <table class="list-panel__table table table-small-font table-bordered table-striped">
+                            <thead class="list-panel__table-thead">
+                                <tr class="list-panel__table-thead-row">
+                                    <th>Call Controll</th>
+                                    <th>Read</th>
+                                    <th>Sound / Auto Call</th>
+                                    <th>Truck</th>
+                                    <th>Origin</th>
+                                    <th>Destination</th>
+                                    <th>Pickup</th>
+                                    <th>DH-O</th>
+                                    <th>DH-D</th>
+                                    <th>F/P</th>
+                                    <th>Length</th>
+                                    <th>Weight</th>
+                                    <th>Trip</th>
+                                    <th>Alarm</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-panel__table-tbody" id="modal-table-root"></tbody>
+                        </table>
+                        <div id="openModal" class="modalDialog">
+                            <div>
+                                <a href="#close" title="Закрыть" class="close">X</a>
+                                <div class="modal-items">
+                                    <label class="modal-label">Call Control <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Read <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Sound / Auto Call <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Truck <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Origin <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Destination <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Pickup <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">DH-O <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">DH-D <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">F/P <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Length <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Weight <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Trip <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Alarm <input type="text" class="modal-input"></label>
+                                    <label class="modal-label">Actions <input type="text" class="modal-input"></label>
+                                    <a href="#close"><button id="modal-complete" class="btn">ADD</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-main">
+                    <div class="list-main__info">
+                        <div class="list-main__info-results"><p>Search results: Total: <span id="total-num"></span></p></div>
+                        <div class="list-main__info-edit">
+                            <button class="btn"><img src="css/icons/undo.png" class="btn-icon"> Undo</button>
+                            <button class="btn" id="btn-clear-table"><img src="css/icons/clear.png" class="btn-icon"> Clear</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive" data-pattern="priority-columns">     
+                        <table class="list-main__table table table-small-font table-bordered table-striped">
+                            <thead class="list-main__table-thead">
+                                <tr class="list-main__table-thead-row">
+                                    <th>Rate</th>
+                                    <th>F</th>
+                                    <th>Source</th>
+                                    <th>Age</th>
+                                    <th>Avail</th>
+                                    <th>Truck</th>
+                                    <th>Truck-O</th>
+                                    <th>DH-O</th>
+                                    <th>F/P</th>
+                                    <th>Origin</th>
+                                    <th>Trip</th>
+                                    <th>Destination</th>
+                                    <th>DH-D</th>
+                                    <th>Truck-D</th>
+                                    <th>Length</th>
+                                    <th>Weight</th>
+                                    <th>Company</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list-main__table-tbody" id="main-table-root"></tbody>
+                        </table>
+                    </div>                    
+                </div>
+             </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/rwd-table.js"></script>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
